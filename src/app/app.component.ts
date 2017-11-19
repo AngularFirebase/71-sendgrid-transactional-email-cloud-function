@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +9,21 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AppComponent implements OnInit {
 
+  endpoint = 'https://us-central1-firestarter-96e46.cloudfunctions.net/httpEmail';
 
-  constructor(private afs: AngularFirestore) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() { }
+
+  sendEmail() {
+    const data = {
+      toEmail: 'hello@jeffdelaney.me',
+      toName: 'Jeff Delaney'
+    }
+
+    this.http.post(this.endpoint, data).subscribe()
+
+  }
 
 
 }
