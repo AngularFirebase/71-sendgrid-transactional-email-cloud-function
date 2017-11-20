@@ -1,6 +1,6 @@
-# Episode XY
+# Episode 71
 
-Watch the [screencast]()
+Watch the [SendGrid Firebase Cloud Functions screencast](https://angularfirebase.com/lessons/sendgrid-v3-nodejs-transactional-email-cloud-function/)
 
 ## Usage
 
